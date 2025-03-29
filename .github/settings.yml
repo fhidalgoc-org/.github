@@ -1,0 +1,6 @@
+repository:
+  custom_tabs:
+    - title: "Home"
+      path: "README.md"
+    - title: "Installation"
+      path: "installation.md"
