@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
 
-      - name: Run a one-line script
-        run: echo Hello from Octo Organization
+      - uses: fhidalgoc-org/.github/.github/workflows/blank.yml@main
+        name: run reusable workflow
+        with:
+          name: hello_from_template
+          personal_access_token: ${{ secrets.GITHUB_TOKEN }}
