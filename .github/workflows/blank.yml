@@ -2,13 +2,7 @@ name: checkout_and_setup
 
 on:
   workflow_call:
-    inputs:
-      name:
-        required: true
-        type: string
-    secrets:
-      personal_access_token:
-        required: true
+
 
 jobs:
   # build:
@@ -47,7 +41,7 @@ jobs:
           # (PAT) and configured it as a GitHub action secret named
           # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
           token: ${{ secrets.GITHUB_TOKEN }}
-          # skip-github-pull-request: true
+          skip-github-pull-request: true
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
           release-type: simple
