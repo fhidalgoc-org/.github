@@ -7,12 +7,11 @@ on:
     branches: [ $default-branch ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: fhidalgoc-org/.github/.github/workflows/blank.yml@main
-      name: run reusable workflow
-      with:
-        name: hello_from_template
-        personal_access_token: ${{ secrets.GITHUB_TOKEN }}
+  runs-on: ubuntu-latest
+  steps:
+  - uses: fhidalgoc-org/.github/.github/workflows/blank.yml@main
+    name: run reusable workflow
+    with:
+      name: hello_from_template
+      personal_access_token: ${{ secrets.GITHUB_TOKEN }}
 
