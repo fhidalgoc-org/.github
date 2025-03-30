@@ -33,11 +33,8 @@ jobs:
       - name: install dependencies
         run: pip install ultralytics
 
-  test:
-    name: test
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - name: test
+      - name: export model
         run: yolo export model=yolo11n.pt format=onnx
         shell: bash
+
+

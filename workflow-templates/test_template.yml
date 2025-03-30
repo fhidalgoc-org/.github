@@ -5,6 +5,7 @@ on:
     branches: [ $default-branch ]
   pull_request:
     branches: [ $default-branch ]
+  workflow_dispatch:
 
 jobs:
   runs-on: ubuntu-latest
@@ -13,5 +14,6 @@ jobs:
     name: run reusable workflow
     with:
       name: hello_from_template
+    
       personal_access_token: ${{ secrets.GITHUB_TOKEN }}
 
