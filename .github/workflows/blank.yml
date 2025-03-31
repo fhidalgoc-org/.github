@@ -2,10 +2,10 @@ name: checkout_and_setup
 
 on:
   workflow_call:
-    inputs:
-      branch:
-        required: true
-        type: string
+    # inputs:
+      # branch:
+      #   required: true
+      #   type: string
     secrets:
       personal_access_token:
         required: true
@@ -56,7 +56,7 @@ jobs:
           release-type: simple
       # - uses: actions/checkout@v4
       # - name: tag major and minor versions
-      #   if: ${{ steps.release.outputs.release_created }}
+        # if: ${{ steps.release.outputs.release_created }}
       #   run: |
       #     git config user.name github-actions[bot]
       #     git config user.email 41898282+github-actions[bot]@users.noreply.github.com
