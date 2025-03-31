@@ -12,8 +12,6 @@ on:
     secrets:
       personal_access_token:
         required: true
-      DOCKERHUB_USERNAME:
-        required: true
       DOCKERHUB_TOKEN:
         required: true
 
