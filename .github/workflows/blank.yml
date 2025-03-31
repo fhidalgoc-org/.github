@@ -6,6 +6,9 @@ on:
       branch:
         required: true
         type: string
+    secrets:
+      personal_access_token:
+        required: true
 
 jobs:
   # build:
@@ -46,7 +49,7 @@ jobs:
           # (PAT) and configured it as a GitHub action secret named
           # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
           token: ${{ secrets.GITHUB_TOKEN }}
-          target-branch: ${{ inputs.branch }}
+          # target-branch: ${{ inputs.branch }}
           # skip-github-pull-request: true
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
