@@ -21,11 +21,14 @@ jobs:
     steps:
       - uses: octokit/request-action@v2.x
         id: get_latest_release
+
         with:
           route: GET /repos/fhidalgoc-org/${{ inputs.repository }}/releases/latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: "echo latest release: '${{ steps.get_latest_release.outputs.data }}'"
+    outputs:
+      latest_release: ${{ steps.get_latest_release.outputs.data.tag_name }}
   docker:
     needs: logLatestRelease
     runs-on: ubuntu-latest
@@ -46,7 +49,7 @@ jobs:
           push: true
           tags: |
             ${{ inputs.username }}/${{ inputs.repository }}:latest
-            ${{ inputs.username }}/${{ inputs.repository }}:${{ steps.get_latest_release.outputs.data.tag_name }}
+            ${{ inputs.username }}/${{ inputs.repository }}:${{ needs.logLatestRelease.outputs.latest_release }}
 
 
 
