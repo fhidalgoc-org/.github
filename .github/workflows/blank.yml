@@ -46,7 +46,7 @@ jobs:
           push: true
           tags: |
             ${{ inputs.username }}/${{ inputs.repository }}:latest
-            ${{ inputs.username }}/${{ inputs.repository }}:${{ steps.get_latest_release.outputs.data }}
+            ${{ inputs.username }}/${{ inputs.repository }}:${{ steps.get_latest_release.outputs.data.tag_name }}
 
 
 
