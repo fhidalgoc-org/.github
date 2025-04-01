@@ -29,6 +29,7 @@ jobs:
       - run: "echo latest release: '${{ steps.get_latest_release.outputs.data }}'"
     outputs:
       latest_release: ${{ steps.get_latest_release.outputs.data.tag_name }}
+
   docker:
     needs: logLatestRelease
     runs-on: ubuntu-latest
@@ -42,6 +43,10 @@ jobs:
         with:
           username: ${{ inputs.username }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Log latest release
+        run: "echo latest release: '${{ needs.logLatestRelease.outputs.latest_release }}'"
+
       -
         name: Build and push
         uses: docker/build-push-action@v6
