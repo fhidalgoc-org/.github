@@ -10,6 +10,8 @@ on:
         required: true
         type: string
     secrets:
+      GITHUB_TOKEN:
+        required: true
       personal_access_token:
         required: true
       DOCKERHUB_TOKEN:
