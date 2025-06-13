@@ -1,16 +1,13 @@
-name: Octo Organization CI
+name: CI Template
 
 on:
   push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-  - uses: fhidalgoc-org/.github/.github/workflows/blank.yml@main
-    name: run reusable workflow
+  build:
+    uses: fhidalgoc-orc/workflows/template.yml
+    name: Reusable workflow
+    secrets: inherit
 
 
